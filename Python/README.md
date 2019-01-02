@@ -10,4 +10,12 @@
 
 ## Installation
 
+activate virtualenv
+
+install from github
+
 `pip install -e git+https://github.io/neurodata/rerf/#egg=rerf&subdirectory=Python`
+
+build
+
+`python setup.py build_ext --inplace`
