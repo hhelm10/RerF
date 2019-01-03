@@ -13,11 +13,11 @@
 fastPredict <-
 	function(X, forest){
 		if(is.null(nrow(X))){
-			predictions <- zs$predict(as.numeric(X))
+			predictions <- forest$predict(as.numeric(X))
 		}else{
 			predictions <- NA
 			for(i in 1:nrow(X)){
-				predictions[i] <- zs$predict(as.numeric(X[i,]))
+				predictions[i] <- forest$predict(as.numeric(X[i,]))
 			}
 		}
 

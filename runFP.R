@@ -5,5 +5,5 @@ zs$printParameters();
 zs$printForestType();
 
 
-predictions <- fastPredict(as.matrix(iris[,1:4]))
+predictions <- fastPredict(as.matrix(iris[,1:4]), zs)
 print(predictions)
