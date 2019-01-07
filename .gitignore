@@ -19,7 +19,7 @@
 .Rproj.user/
 
 # vscode settings
-.vscode/settings.json
+.vscode
 
 # produced vignettes
 vignettes/*.html

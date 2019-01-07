@@ -11,42 +11,47 @@ namespace fp {
 	template <typename T>
 		class fpForest{
 
-			protected:
-				std::unique_ptr<fpForestBase<T> > forest;
+			// protected:
+			// 	std::unique_ptr<fpForestBase<T> > forest;
 
-				void loadData(){
-					fpSingleton::getSingleton().loadData();
-				}
+				// void loadData(){
+				// 	fpSingleton::getSingleton().loadData();
+				// }
 
-				void loadTestData(){
-					fpSingleton::getSingleton().loadTestData();
-				}
+				// void loadTestData(){
+				// 	fpSingleton::getSingleton().loadTestData();
+				// }
 
-				void deleteData(){
-					fpSingleton::getSingleton().deleteData();
-				}
+				// void deleteData(){
+				// 	fpSingleton::getSingleton().deleteData();
+				// }
 
-				void deleteTestData(){
-					fpSingleton::getSingleton().deleteTestData();
-				}
+				// void deleteTestData(){
+				// 	fpSingleton::getSingleton().deleteTestData();
+				// }
 
 
-				inline void setFunctionPointers(){
-					;//fpSingleton::getSingleton().setFunctionPointers();
-				}
+				// inline void setFunctionPointers(){
+				// 	;//fpSingleton::getSingleton().setFunctionPointers();
+				// }
 
-				inline void initializeForestType(){
-					forest = forestFactory<T>::setForestType(fpSingleton::getSingleton().returnForestType());
-				}
+				// inline void initializeForestType(){
+				// 	forest = forestFactory<T>::setForestType(fpSingleton::getSingleton().returnForestType());
+				// }
 
-				inline void setDataDependentParameters(){
-					fpSingleton::getSingleton().setDataDependentParameters();
-				}
+				// inline void setDataDependentParameters(){
+				// 	fpSingleton::getSingleton().setDataDependentParameters();
+				// }
 
 
 			public:
 
 				fpForest(){}
+
+				// // TODO: RM
+				// fpForest& operator=(const T& other) {
+				// 	return *this;
+				// }
 
 				inline void setParamString(const std::string& parameterName, const std::string& parameterValue){
 					fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
@@ -65,36 +70,36 @@ namespace fp {
 					fpSingleton::getSingleton().printAllParameters();
 				}
 
-				inline void printForestType(){
-					fpSingleton::getSingleton().printForestType();
-				}
+				// inline void printForestType(){
+				// 	fpSingleton::getSingleton().printForestType();
+				// }
 
 
-				void growForest(){
-					loadData();
-					initializeForestType();
-					setDataDependentParameters();
-					//timeLogger x;
-					//x.startGrowTimer();
-					forest->growForest();
-					//x.stopGrowTimer();
-					//x.printGrowTime();
-					deleteData();
-				}
+				// void growForest(){
+				// 	loadData();
+				// 	initializeForestType();
+				// 	setDataDependentParameters();
+				// 	//timeLogger x;
+				// 	//x.startGrowTimer();
+				// 	forest->growForest();
+				// 	//x.stopGrowTimer();
+				// 	//x.printGrowTime();
+				// 	deleteData();
+				// }
 
 
-				inline int predict(std::vector<T>& observation){
-					return forest->predictClass(observation);
-				}
+				// inline int predict(std::vector<T>& observation){
+				// 	return forest->predictClass(observation);
+				// }
 
 
-				float testAccuracy(){
-					float testError;
-					loadTestData();
-					testError = forest->testForest();
-					deleteTestData();
-					return testError;
-				}
+				// float testAccuracy(){
+				// 	float testError;
+				// 	loadTestData();
+				// 	testError = forest->testForest();
+				// 	deleteTestData();
+				// 	return testError;
+				// }
 		}; // class fpForest
 } //namespace fp
 #endif //fpForest.h
