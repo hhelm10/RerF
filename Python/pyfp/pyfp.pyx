@@ -12,11 +12,11 @@ cdef class PyFP:
     def setParamString(self, parameterName, parameterValue):
         self.c_fpForest.setParamString(parameterName, parameterValue)
 
-    def setParamDouble(self, parameterName, parameterValue):
-        self.c_fpForest.setParamDouble(parameterName, parameterValue)
+    # def setParamDouble(self, parameterName, parameterValue):
+    #     self.c_fpForest.setParamDouble(parameterName, parameterValue)
 
-    def setParamInt(self, parameterName, parameterValue):
-        self.c_fpForest.setParamInt(parameterName, parameterValue)
+    # def setParamInt(self, parameterName, parameterValue):
+    #     self.c_fpForest.setParamInt(parameterName, parameterValue)
 
     # def printParameters(self):
     #     self.c_fpForest.printParameters()

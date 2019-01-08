@@ -1,18 +1,22 @@
-from libcpp.vector cimport vector
+# distutils: language = c++
+# cython: language_level=3
 
-# cdef extern from "../../src/packedForest/src/baseFunctions/fpForest.h" namespace "fp":
+from libcpp.vector cimport vector
+from libcpp.string cimport string
+
+
 cdef extern from "../../src/packedForest/src/packedForest.h" namespace "fp":
     cdef cppclass fpForest[double]:
         fpForest() except +
 
-        void setParamString(const char* parameterName, const char* parameterValue)
-        void setParamDouble(const char* parameterName, const float parameterValue)
-        void setParamInt(const char* parameterName, const int parameterValue)
-        void printParameters()
-        # void printForestType()
+        inline void setParamString(const string& parameterName, const string& parameterValue)
+        # inline void setParamDouble(const string& parameterName, const float parameterValue)
+        # inline void setParamInt(const string& parameterName, const int parameterValue)
+        # inline void printParameters()
+        # inline void printForestType()
         # void growForest()
-        # int predict(vector[float] observation)
-        # float testAccuracy()
+        # inline int predict(vector[float] observation)
+        # double testAccuracy()
 
 
 # cdef fpForest[double] *forest = new fpForest[double]()

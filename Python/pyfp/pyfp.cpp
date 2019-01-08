@@ -3,19 +3,25 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "depends": [
-            "../src/packedForest/src/packedForest.h"
-        ],
         "include_dirs": [
-            "fpForest"
+            "../src/packedForest/src",
+            "../src/packedForest/src/treeConstructor",
+            "../src/packedForest/src/fpSingleton",
+            "../src/packedForest/src/baseFunctions",
+            "../src/packedForest/src/baseFunctions/fpGrowingTreeHelpers",
+            "../src/packedForest/src/hold",
+            "../src/packedForest/src/forestTypes",
+            "../src/packedForest/src/forestTypes/rfClassification",
+            "../src/packedForest/src/forestTypes/rerf",
+            "../src/packedForest/src/forestTypes/smallSample"
         ],
         "language": "c++",
-        "name": "Python.fpForest.pyfp",
+        "name": "pyfp.pyfp",
         "sources": [
-            "fpForest/pyfp.pyx"
+            "pyfp/pyfp.pyx"
         ]
     },
-    "module_name": "Python.fpForest.pyfp"
+    "module_name": "pyfp.pyfp"
 }
 END: Cython Metadata */
 
@@ -638,14 +644,16 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__Python__fpForest__pyfp
-#define __PYX_HAVE_API__Python__fpForest__pyfp
+#define __PYX_HAVE__pyfp__pyfp
+#define __PYX_HAVE_API__pyfp__pyfp
 /* Early includes */
 #include "ios"
 #include "new"
 #include "stdexcept"
 #include "typeinfo"
 #include <vector>
+#include <string.h>
+#include <string>
 #include "../../src/packedForest/src/packedForest.h"
 #ifdef _OPENMP
 #include <omp.h>
@@ -855,20 +863,20 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "stringsource",
-  "fpForest/pyfp.pyx",
+  "pyfp/pyfp.pyx",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP;
+struct __pyx_obj_4pyfp_4pyfp_PyFP;
 
-/* "Python/fpForest/pyfp.pyx":6
+/* "pyfp/pyfp.pyx":6
  * from fpForest cimport fpForest
  * 
  * cdef class PyFP:             # <<<<<<<<<<<<<<
  *     cdef fpForest c_fpForest
  * 
  */
-struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP {
+struct __pyx_obj_4pyfp_4pyfp_PyFP {
   PyObject_HEAD
   fp::fpForest<double>  c_fpForest;
 };
@@ -1097,14 +1105,14 @@ static void __Pyx_CppExn2PyErr() {
 }
 #endif
 
-/* CIntFromPy.proto */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
-
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
+
+/* CIntFromPy.proto */
+static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* FastTypeChecks.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
@@ -1128,15 +1136,20 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 /* Module declarations from 'libcpp.vector' */
 
+/* Module declarations from 'libc.string' */
+
+/* Module declarations from 'libcpp.string' */
+
 /* Module declarations from 'fpForest' */
 
-/* Module declarations from 'Python.fpForest.pyfp' */
-static PyTypeObject *__pyx_ptype_6Python_8fpForest_4pyfp_PyFP = 0;
-#define __Pyx_MODULE_NAME "Python.fpForest.pyfp"
-extern int __pyx_module_is_main_Python__fpForest__pyfp;
-int __pyx_module_is_main_Python__fpForest__pyfp = 0;
+/* Module declarations from 'pyfp.pyfp' */
+static PyTypeObject *__pyx_ptype_4pyfp_4pyfp_PyFP = 0;
+static std::string __pyx_convert_string_from_py_std__in_string(PyObject *); /*proto*/
+#define __Pyx_MODULE_NAME "pyfp.pyfp"
+extern int __pyx_module_is_main_pyfp__pyfp;
+int __pyx_module_is_main_pyfp__pyfp = 0;
 
-/* Implementation of 'Python.fpForest.pyfp' */
+/* Implementation of 'pyfp.pyfp' */
 static PyObject *__pyx_builtin_TypeError;
 static const char __pyx_k_PyFP[] = "PyFP";
 static const char __pyx_k_main[] = "__main__";
@@ -1168,18 +1181,16 @@ static PyObject *__pyx_n_s_reduce_ex;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_test;
-static int __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_2setParamString(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue); /* proto */
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_4setParamDouble(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue); /* proto */
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_6setParamInt(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue); /* proto */
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_tp_new_6Python_8fpForest_4pyfp_PyFP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static int __pyx_pf_4pyfp_4pyfp_4PyFP___cinit__(struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_2setParamString(struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue); /* proto */
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_4pyfp_4pyfp_PyFP(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 /* Late includes */
 
-/* "Python/fpForest/pyfp.pyx":9
+/* "pyfp/pyfp.pyx":9
  *     cdef fpForest c_fpForest
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -1188,28 +1199,28 @@ static PyObject *__pyx_tuple__2;
  */
 
 /* Python wrapper */
-static int __pyx_pw_6Python_8fpForest_4pyfp_4PyFP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static int __pyx_pw_6Python_8fpForest_4pyfp_4PyFP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static int __pyx_pw_4pyfp_4pyfp_4PyFP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_4pyfp_4pyfp_4PyFP_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
     __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return -1;}
   if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__cinit__", 0))) return -1;
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self));
+  __pyx_r = __pyx_pf_4pyfp_4pyfp_4PyFP___cinit__(((struct __pyx_obj_4pyfp_4pyfp_PyFP *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static int __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self) {
+static int __pyx_pf_4pyfp_4pyfp_4PyFP___cinit__(struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   fp::fpForest<double>  __pyx_t_1;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "Python/fpForest/pyfp.pyx":10
+  /* "pyfp/pyfp.pyx":10
  * 
  *     def __cinit__(self):
  *         self.c_fpForest = fpForest()             # <<<<<<<<<<<<<<
@@ -1224,7 +1235,7 @@ static int __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(struct __pyx_obj_6Py
   }
   __pyx_v_self->c_fpForest = __pyx_t_1;
 
-  /* "Python/fpForest/pyfp.pyx":9
+  /* "pyfp/pyfp.pyx":9
  *     cdef fpForest c_fpForest
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -1236,14 +1247,14 @@ static int __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(struct __pyx_obj_6Py
   __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfp.pyfp.PyFP.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "Python/fpForest/pyfp.pyx":12
+/* "pyfp/pyfp.pyx":12
  *         self.c_fpForest = fpForest()
  * 
  *     def setParamString(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
@@ -1252,8 +1263,8 @@ static int __pyx_pf_6Python_8fpForest_4pyfp_4PyFP___cinit__(struct __pyx_obj_6Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_3setParamString(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_3setParamString(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_3setParamString(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_3setParamString(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_parameterName = 0;
   PyObject *__pyx_v_parameterValue = 0;
   PyObject *__pyx_r = 0;
@@ -1301,36 +1312,36 @@ static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_3setParamString(PyObject
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("setParamString", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 12, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamString", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfp.pyfp.PyFP.setParamString", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP_2setParamString(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self), __pyx_v_parameterName, __pyx_v_parameterValue);
+  __pyx_r = __pyx_pf_4pyfp_4pyfp_4PyFP_2setParamString(((struct __pyx_obj_4pyfp_4pyfp_PyFP *)__pyx_v_self), __pyx_v_parameterName, __pyx_v_parameterValue);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_2setParamString(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue) {
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_2setParamString(struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  char const *__pyx_t_1;
-  char const *__pyx_t_2;
+  std::string __pyx_t_1;
+  std::string __pyx_t_2;
   __Pyx_RefNannySetupContext("setParamString", 0);
 
-  /* "Python/fpForest/pyfp.pyx":13
+  /* "pyfp/pyfp.pyx":13
  * 
  *     def setParamString(self, parameterName, parameterValue):
  *         self.c_fpForest.setParamString(parameterName, parameterValue)             # <<<<<<<<<<<<<<
  * 
- *     def setParamDouble(self, parameterName, parameterValue):
+ *     # def setParamDouble(self, parameterName, parameterValue):
  */
-  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_parameterName); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_AsString(__pyx_v_parameterValue); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_string_from_py_std__in_string(__pyx_v_parameterName); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_2 = __pyx_convert_string_from_py_std__in_string(__pyx_v_parameterValue); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 13, __pyx_L1_error)
   __pyx_v_self->c_fpForest.setParamString(__pyx_t_1, __pyx_t_2);
 
-  /* "Python/fpForest/pyfp.pyx":12
+  /* "pyfp/pyfp.pyx":12
  *         self.c_fpForest = fpForest()
  * 
  *     def setParamString(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
@@ -1342,221 +1353,7 @@ static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_2setParamString(struct _
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamString", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "Python/fpForest/pyfp.pyx":15
- *         self.c_fpForest.setParamString(parameterName, parameterValue)
- * 
- *     def setParamDouble(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
- *         self.c_fpForest.setParamDouble(parameterName, parameterValue)
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_5setParamDouble(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_5setParamDouble(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_parameterName = 0;
-  PyObject *__pyx_v_parameterValue = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("setParamDouble (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_parameterName,&__pyx_n_s_parameterValue,0};
-    PyObject* values[2] = {0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_parameterName)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_parameterValue)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("setParamDouble", 1, 2, 2, 1); __PYX_ERR(1, 15, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setParamDouble") < 0)) __PYX_ERR(1, 15, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-    }
-    __pyx_v_parameterName = values[0];
-    __pyx_v_parameterValue = values[1];
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setParamDouble", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 15, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamDouble", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP_4setParamDouble(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self), __pyx_v_parameterName, __pyx_v_parameterValue);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_4setParamDouble(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  char const *__pyx_t_1;
-  float __pyx_t_2;
-  __Pyx_RefNannySetupContext("setParamDouble", 0);
-
-  /* "Python/fpForest/pyfp.pyx":16
- * 
- *     def setParamDouble(self, parameterName, parameterValue):
- *         self.c_fpForest.setParamDouble(parameterName, parameterValue)             # <<<<<<<<<<<<<<
- * 
- *     def setParamInt(self, parameterName, parameterValue):
- */
-  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_parameterName); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L1_error)
-  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_parameterValue); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L1_error)
-  __pyx_v_self->c_fpForest.setParamDouble(__pyx_t_1, __pyx_t_2);
-
-  /* "Python/fpForest/pyfp.pyx":15
- *         self.c_fpForest.setParamString(parameterName, parameterValue)
- * 
- *     def setParamDouble(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
- *         self.c_fpForest.setParamDouble(parameterName, parameterValue)
- * 
- */
-
-  /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamDouble", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "Python/fpForest/pyfp.pyx":18
- *         self.c_fpForest.setParamDouble(parameterName, parameterValue)
- * 
- *     def setParamInt(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
- *         self.c_fpForest.setParamInt(parameterName, parameterValue)
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_7setParamInt(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_7setParamInt(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_parameterName = 0;
-  PyObject *__pyx_v_parameterValue = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("setParamInt (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_parameterName,&__pyx_n_s_parameterValue,0};
-    PyObject* values[2] = {0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_parameterName)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_parameterValue)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("setParamInt", 1, 2, 2, 1); __PYX_ERR(1, 18, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "setParamInt") < 0)) __PYX_ERR(1, 18, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-    }
-    __pyx_v_parameterName = values[0];
-    __pyx_v_parameterValue = values[1];
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("setParamInt", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 18, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamInt", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP_6setParamInt(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self), __pyx_v_parameterName, __pyx_v_parameterValue);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_6setParamInt(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, PyObject *__pyx_v_parameterName, PyObject *__pyx_v_parameterValue) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  char const *__pyx_t_1;
-  int __pyx_t_2;
-  __Pyx_RefNannySetupContext("setParamInt", 0);
-
-  /* "Python/fpForest/pyfp.pyx":19
- * 
- *     def setParamInt(self, parameterName, parameterValue):
- *         self.c_fpForest.setParamInt(parameterName, parameterValue)             # <<<<<<<<<<<<<<
- * 
- *     # def printParameters(self):
- */
-  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_parameterName); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(1, 19, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_parameterValue); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 19, __pyx_L1_error)
-  __pyx_v_self->c_fpForest.setParamInt(__pyx_t_1, __pyx_t_2);
-
-  /* "Python/fpForest/pyfp.pyx":18
- *         self.c_fpForest.setParamDouble(parameterName, parameterValue)
- * 
- *     def setParamInt(self, parameterName, parameterValue):             # <<<<<<<<<<<<<<
- *         self.c_fpForest.setParamInt(parameterName, parameterValue)
- * 
- */
-
-  /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.setParamInt", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfp.pyfp.PyFP.setParamString", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1571,19 +1368,19 @@ static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_6setParamInt(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_9__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP_8__reduce_cython__(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self));
+  __pyx_r = __pyx_pf_4pyfp_4pyfp_4PyFP_4__reduce_cython__(((struct __pyx_obj_4pyfp_4pyfp_PyFP *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_8__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self) {
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1610,7 +1407,7 @@ static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_8__reduce_cython__(CYTHO
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfp.pyfp.PyFP.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
@@ -1625,19 +1422,19 @@ static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_8__reduce_cython__(CYTHO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_11__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_4pyfp_4pyfp_4PyFP_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6Python_8fpForest_4pyfp_4PyFP_10__setstate_cython__(((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_4pyfp_4pyfp_4PyFP_6__setstate_cython__(((struct __pyx_obj_4pyfp_4pyfp_PyFP *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_10__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_4pyfp_4pyfp_4PyFP_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_4pyfp_4pyfp_PyFP *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1664,15 +1461,68 @@ static PyObject *__pyx_pf_6Python_8fpForest_4pyfp_4PyFP_10__setstate_cython__(CY
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("Python.fpForest.pyfp.PyFP.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("pyfp.pyfp.PyFP.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_tp_new_6Python_8fpForest_4pyfp_PyFP(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
-  struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *p;
+/* "string.from_py":13
+ * 
+ * @cname("__pyx_convert_string_from_py_std__in_string")
+ * cdef string __pyx_convert_string_from_py_std__in_string(object o) except *:             # <<<<<<<<<<<<<<
+ *     cdef Py_ssize_t length
+ *     cdef const char* data = __Pyx_PyObject_AsStringAndSize(o, &length)
+ */
+
+static std::string __pyx_convert_string_from_py_std__in_string(PyObject *__pyx_v_o) {
+  Py_ssize_t __pyx_v_length;
+  char const *__pyx_v_data;
+  std::string __pyx_r;
+  __Pyx_RefNannyDeclarations
+  char const *__pyx_t_1;
+  __Pyx_RefNannySetupContext("__pyx_convert_string_from_py_std__in_string", 0);
+
+  /* "string.from_py":15
+ * cdef string __pyx_convert_string_from_py_std__in_string(object o) except *:
+ *     cdef Py_ssize_t length
+ *     cdef const char* data = __Pyx_PyObject_AsStringAndSize(o, &length)             # <<<<<<<<<<<<<<
+ *     return string(data, length)
+ * 
+ */
+  __pyx_t_1 = __Pyx_PyObject_AsStringAndSize(__pyx_v_o, (&__pyx_v_length)); if (unlikely(__pyx_t_1 == ((char const *)NULL))) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_v_data = __pyx_t_1;
+
+  /* "string.from_py":16
+ *     cdef Py_ssize_t length
+ *     cdef const char* data = __Pyx_PyObject_AsStringAndSize(o, &length)
+ *     return string(data, length)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __pyx_r = std::string(__pyx_v_data, __pyx_v_length);
+  goto __pyx_L0;
+
+  /* "string.from_py":13
+ * 
+ * @cname("__pyx_convert_string_from_py_std__in_string")
+ * cdef string __pyx_convert_string_from_py_std__in_string(object o) except *:             # <<<<<<<<<<<<<<
+ *     cdef Py_ssize_t length
+ *     cdef const char* data = __Pyx_PyObject_AsStringAndSize(o, &length)
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("string.from_py.__pyx_convert_string_from_py_std__in_string", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_pretend_to_initialize(&__pyx_r);
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_tp_new_4pyfp_4pyfp_PyFP(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_4pyfp_4pyfp_PyFP *p;
   PyObject *o;
   if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
     o = (*t->tp_alloc)(t, 0);
@@ -1680,17 +1530,17 @@ static PyObject *__pyx_tp_new_6Python_8fpForest_4pyfp_PyFP(PyTypeObject *t, CYTH
     o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
   }
   if (unlikely(!o)) return 0;
-  p = ((struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)o);
+  p = ((struct __pyx_obj_4pyfp_4pyfp_PyFP *)o);
   new((void*)&(p->c_fpForest)) fp::fpForest<double> ();
-  if (unlikely(__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
+  if (unlikely(__pyx_pw_4pyfp_4pyfp_4PyFP_1__cinit__(o, __pyx_empty_tuple, NULL) < 0)) goto bad;
   return o;
   bad:
   Py_DECREF(o); o = 0;
   return NULL;
 }
 
-static void __pyx_tp_dealloc_6Python_8fpForest_4pyfp_PyFP(PyObject *o) {
-  struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *p = (struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP *)o;
+static void __pyx_tp_dealloc_4pyfp_4pyfp_PyFP(PyObject *o) {
+  struct __pyx_obj_4pyfp_4pyfp_PyFP *p = (struct __pyx_obj_4pyfp_4pyfp_PyFP *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
     if (PyObject_CallFinalizerFromDealloc(o)) return;
@@ -1700,21 +1550,19 @@ static void __pyx_tp_dealloc_6Python_8fpForest_4pyfp_PyFP(PyObject *o) {
   (*Py_TYPE(o)->tp_free)(o);
 }
 
-static PyMethodDef __pyx_methods_6Python_8fpForest_4pyfp_PyFP[] = {
-  {"setParamString", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_3setParamString, METH_VARARGS|METH_KEYWORDS, 0},
-  {"setParamDouble", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_5setParamDouble, METH_VARARGS|METH_KEYWORDS, 0},
-  {"setParamInt", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_7setParamInt, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_9__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6Python_8fpForest_4pyfp_4PyFP_11__setstate_cython__, METH_O, 0},
+static PyMethodDef __pyx_methods_4pyfp_4pyfp_PyFP[] = {
+  {"setParamString", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_4pyfp_4pyfp_4PyFP_3setParamString, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_4pyfp_4pyfp_4PyFP_5__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_4pyfp_4pyfp_4PyFP_7__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
-static PyTypeObject __pyx_type_6Python_8fpForest_4pyfp_PyFP = {
+static PyTypeObject __pyx_type_4pyfp_4pyfp_PyFP = {
   PyVarObject_HEAD_INIT(0, 0)
-  "Python.fpForest.pyfp.PyFP", /*tp_name*/
-  sizeof(struct __pyx_obj_6Python_8fpForest_4pyfp_PyFP), /*tp_basicsize*/
+  "pyfp.pyfp.PyFP", /*tp_name*/
+  sizeof(struct __pyx_obj_4pyfp_4pyfp_PyFP), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_6Python_8fpForest_4pyfp_PyFP, /*tp_dealloc*/
+  __pyx_tp_dealloc_4pyfp_4pyfp_PyFP, /*tp_dealloc*/
   0, /*tp_print*/
   0, /*tp_getattr*/
   0, /*tp_setattr*/
@@ -1742,7 +1590,7 @@ static PyTypeObject __pyx_type_6Python_8fpForest_4pyfp_PyFP = {
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
   0, /*tp_iternext*/
-  __pyx_methods_6Python_8fpForest_4pyfp_PyFP, /*tp_methods*/
+  __pyx_methods_4pyfp_4pyfp_PyFP, /*tp_methods*/
   0, /*tp_members*/
   0, /*tp_getset*/
   0, /*tp_base*/
@@ -1752,7 +1600,7 @@ static PyTypeObject __pyx_type_6Python_8fpForest_4pyfp_PyFP = {
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_6Python_8fpForest_4pyfp_PyFP, /*tp_new*/
+  __pyx_tp_new_4pyfp_4pyfp_PyFP, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -1909,14 +1757,14 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_6Python_8fpForest_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
-  __pyx_type_6Python_8fpForest_4pyfp_PyFP.tp_print = 0;
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6Python_8fpForest_4pyfp_PyFP.tp_dictoffset && __pyx_type_6Python_8fpForest_4pyfp_PyFP.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_6Python_8fpForest_4pyfp_PyFP.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  if (PyType_Ready(&__pyx_type_4pyfp_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
+  __pyx_type_4pyfp_4pyfp_PyFP.tp_print = 0;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_4pyfp_4pyfp_PyFP.tp_dictoffset && __pyx_type_4pyfp_4pyfp_PyFP.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_4pyfp_4pyfp_PyFP.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PyFP, (PyObject *)&__pyx_type_6Python_8fpForest_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6Python_8fpForest_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
-  __pyx_ptype_6Python_8fpForest_4pyfp_PyFP = &__pyx_type_6Python_8fpForest_4pyfp_PyFP;
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PyFP, (PyObject *)&__pyx_type_4pyfp_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_4pyfp_4pyfp_PyFP) < 0) __PYX_ERR(1, 6, __pyx_L1_error)
+  __pyx_ptype_4pyfp_4pyfp_PyFP = &__pyx_type_4pyfp_4pyfp_PyFP;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2118,14 +1966,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_Python__fpForest__pyfp) {
+  if (__pyx_module_is_main_pyfp__pyfp) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(1, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "Python.fpForest.pyfp")) {
-      if (unlikely(PyDict_SetItemString(modules, "Python.fpForest.pyfp", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "pyfp.pyfp")) {
+      if (unlikely(PyDict_SetItemString(modules, "pyfp.pyfp", __pyx_m) < 0)) __PYX_ERR(1, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2146,7 +1994,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   #endif
 
-  /* "Python/fpForest/pyfp.pyx":1
+  /* "pyfp/pyfp.pyx":1
  * # distutils: language = c++             # <<<<<<<<<<<<<<
  * # cython: language_level=3
  * 
@@ -2156,6 +2004,14 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
+  /* "string.from_py":13
+ * 
+ * @cname("__pyx_convert_string_from_py_std__in_string")
+ * cdef string __pyx_convert_string_from_py_std__in_string(object o) except *:             # <<<<<<<<<<<<<<
+ *     cdef Py_ssize_t length
+ *     cdef const char* data = __Pyx_PyObject_AsStringAndSize(o, &length)
+ */
+
   /*--- Wrapped vars code ---*/
 
   goto __pyx_L0;
@@ -2163,11 +2019,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init Python.fpForest.pyfp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init pyfp.pyfp", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init Python.fpForest.pyfp");
+    PyErr_SetString(PyExc_ImportError, "init pyfp.pyfp");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -2944,217 +2800,6 @@ bad:
     Py_XDECREF(py_frame);
 }
 
-/* CIntFromPyVerify */
-#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
-#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
-    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
-#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
-    {\
-        func_type value = func_value;\
-        if (sizeof(target_type) < sizeof(func_type)) {\
-            if (unlikely(value != (func_type) (target_type) value)) {\
-                func_type zero = 0;\
-                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
-                    return (target_type) -1;\
-                if (is_unsigned && unlikely(value < zero))\
-                    goto raise_neg_overflow;\
-                else\
-                    goto raise_overflow;\
-            }\
-        }\
-        return (target_type) value;\
-    }
-
-/* CIntFromPy */
-static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
-    const int neg_one = (int) ((int) 0 - (int) 1), const_zero = (int) 0;
-    const int is_unsigned = neg_one > const_zero;
-#if PY_MAJOR_VERSION < 3
-    if (likely(PyInt_Check(x))) {
-        if (sizeof(int) < sizeof(long)) {
-            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
-        } else {
-            long val = PyInt_AS_LONG(x);
-            if (is_unsigned && unlikely(val < 0)) {
-                goto raise_neg_overflow;
-            }
-            return (int) val;
-        }
-    } else
-#endif
-    if (likely(PyLong_Check(x))) {
-        if (is_unsigned) {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
-                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
-                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
-                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
-                        }
-                    }
-                    break;
-            }
-#endif
-#if CYTHON_COMPILING_IN_CPYTHON
-            if (unlikely(Py_SIZE(x) < 0)) {
-                goto raise_neg_overflow;
-            }
-#else
-            {
-                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
-                if (unlikely(result < 0))
-                    return (int) -1;
-                if (unlikely(result == 1))
-                    goto raise_neg_overflow;
-            }
-#endif
-            if (sizeof(int) <= sizeof(unsigned long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
-#ifdef HAVE_LONG_LONG
-            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
-#endif
-            }
-        } else {
-#if CYTHON_USE_PYLONG_INTERNALS
-            const digit* digits = ((PyLongObject*)x)->ob_digit;
-            switch (Py_SIZE(x)) {
-                case  0: return (int) 0;
-                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
-                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
-                case -2:
-                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 2:
-                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -3:
-                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 3:
-                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case -4:
-                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-                case 4:
-                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
-                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
-                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
-                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
-                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
-                        }
-                    }
-                    break;
-            }
-#endif
-            if (sizeof(int) <= sizeof(long)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
-#ifdef HAVE_LONG_LONG
-            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
-#endif
-            }
-        }
-        {
-#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
-            PyErr_SetString(PyExc_RuntimeError,
-                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
-#else
-            int val;
-            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
- #if PY_MAJOR_VERSION < 3
-            if (likely(v) && !PyLong_Check(v)) {
-                PyObject *tmp = v;
-                v = PyNumber_Long(tmp);
-                Py_DECREF(tmp);
-            }
- #endif
-            if (likely(v)) {
-                int one = 1; int is_little = (int)*(unsigned char *)&one;
-                unsigned char *bytes = (unsigned char *)&val;
-                int ret = _PyLong_AsByteArray((PyLongObject *)v,
-                                              bytes, sizeof(val),
-                                              is_little, !is_unsigned);
-                Py_DECREF(v);
-                if (likely(!ret))
-                    return val;
-            }
-#endif
-            return (int) -1;
-        }
-    } else {
-        int val;
-        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
-        if (!tmp) return (int) -1;
-        val = __Pyx_PyInt_As_int(tmp);
-        Py_DECREF(tmp);
-        return val;
-    }
-raise_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "value too large to convert to int");
-    return (int) -1;
-raise_neg_overflow:
-    PyErr_SetString(PyExc_OverflowError,
-        "can't convert negative value to int");
-    return (int) -1;
-}
-
 /* CIntToPy */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
     const long neg_one = (long) ((long) 0 - (long) 1), const_zero = (long) 0;
@@ -3185,6 +2830,28 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
                                      little, !is_unsigned);
     }
 }
+
+/* CIntFromPyVerify */
+#define __PYX_VERIFY_RETURN_INT(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 0)
+#define __PYX_VERIFY_RETURN_INT_EXC(target_type, func_type, func_value)\
+    __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, 1)
+#define __PYX__VERIFY_RETURN_INT(target_type, func_type, func_value, exc)\
+    {\
+        func_type value = func_value;\
+        if (sizeof(target_type) < sizeof(func_type)) {\
+            if (unlikely(value != (func_type) (target_type) value)) {\
+                func_type zero = 0;\
+                if (exc && unlikely(value == (func_type)-1 && PyErr_Occurred()))\
+                    return (target_type) -1;\
+                if (is_unsigned && unlikely(value < zero))\
+                    goto raise_neg_overflow;\
+                else\
+                    goto raise_overflow;\
+            }\
+        }\
+        return (target_type) value;\
+    }
 
 /* CIntFromPy */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
@@ -3373,6 +3040,195 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to long");
     return (long) -1;
+}
+
+/* CIntFromPy */
+static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *x) {
+    const int neg_one = (int) ((int) 0 - (int) 1), const_zero = (int) 0;
+    const int is_unsigned = neg_one > const_zero;
+#if PY_MAJOR_VERSION < 3
+    if (likely(PyInt_Check(x))) {
+        if (sizeof(int) < sizeof(long)) {
+            __PYX_VERIFY_RETURN_INT(int, long, PyInt_AS_LONG(x))
+        } else {
+            long val = PyInt_AS_LONG(x);
+            if (is_unsigned && unlikely(val < 0)) {
+                goto raise_neg_overflow;
+            }
+            return (int) val;
+        }
+    } else
+#endif
+    if (likely(PyLong_Check(x))) {
+        if (is_unsigned) {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case  1: __PYX_VERIFY_RETURN_INT(int, digit, digits[0])
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 2 * PyLong_SHIFT) {
+                            return (int) (((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 3 * PyLong_SHIFT) {
+                            return (int) (((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) >= 4 * PyLong_SHIFT) {
+                            return (int) (((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0]));
+                        }
+                    }
+                    break;
+            }
+#endif
+#if CYTHON_COMPILING_IN_CPYTHON
+            if (unlikely(Py_SIZE(x) < 0)) {
+                goto raise_neg_overflow;
+            }
+#else
+            {
+                int result = PyObject_RichCompareBool(x, Py_False, Py_LT);
+                if (unlikely(result < 0))
+                    return (int) -1;
+                if (unlikely(result == 1))
+                    goto raise_neg_overflow;
+            }
+#endif
+            if (sizeof(int) <= sizeof(unsigned long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned long, PyLong_AsUnsignedLong(x))
+#ifdef HAVE_LONG_LONG
+            } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, unsigned PY_LONG_LONG, PyLong_AsUnsignedLongLong(x))
+#endif
+            }
+        } else {
+#if CYTHON_USE_PYLONG_INTERNALS
+            const digit* digits = ((PyLongObject*)x)->ob_digit;
+            switch (Py_SIZE(x)) {
+                case  0: return (int) 0;
+                case -1: __PYX_VERIFY_RETURN_INT(int, sdigit, (sdigit) (-(sdigit)digits[0]))
+                case  1: __PYX_VERIFY_RETURN_INT(int,  digit, +digits[0])
+                case -2:
+                    if (8 * sizeof(int) - 1 > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 2:
+                    if (8 * sizeof(int) > 1 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 2 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                            return (int) ((((((int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -3:
+                    if (8 * sizeof(int) - 1 > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 3:
+                    if (8 * sizeof(int) > 2 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 3 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                            return (int) ((((((((int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case -4:
+                    if (8 * sizeof(int) - 1 > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, long, -(long) (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) (((int)-1)*(((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+                case 4:
+                    if (8 * sizeof(int) > 3 * PyLong_SHIFT) {
+                        if (8 * sizeof(unsigned long) > 4 * PyLong_SHIFT) {
+                            __PYX_VERIFY_RETURN_INT(int, unsigned long, (((((((((unsigned long)digits[3]) << PyLong_SHIFT) | (unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0])))
+                        } else if (8 * sizeof(int) - 1 > 4 * PyLong_SHIFT) {
+                            return (int) ((((((((((int)digits[3]) << PyLong_SHIFT) | (int)digits[2]) << PyLong_SHIFT) | (int)digits[1]) << PyLong_SHIFT) | (int)digits[0])));
+                        }
+                    }
+                    break;
+            }
+#endif
+            if (sizeof(int) <= sizeof(long)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, long, PyLong_AsLong(x))
+#ifdef HAVE_LONG_LONG
+            } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+                __PYX_VERIFY_RETURN_INT_EXC(int, PY_LONG_LONG, PyLong_AsLongLong(x))
+#endif
+            }
+        }
+        {
+#if CYTHON_COMPILING_IN_PYPY && !defined(_PyLong_AsByteArray)
+            PyErr_SetString(PyExc_RuntimeError,
+                            "_PyLong_AsByteArray() not available in PyPy, cannot convert large numbers");
+#else
+            int val;
+            PyObject *v = __Pyx_PyNumber_IntOrLong(x);
+ #if PY_MAJOR_VERSION < 3
+            if (likely(v) && !PyLong_Check(v)) {
+                PyObject *tmp = v;
+                v = PyNumber_Long(tmp);
+                Py_DECREF(tmp);
+            }
+ #endif
+            if (likely(v)) {
+                int one = 1; int is_little = (int)*(unsigned char *)&one;
+                unsigned char *bytes = (unsigned char *)&val;
+                int ret = _PyLong_AsByteArray((PyLongObject *)v,
+                                              bytes, sizeof(val),
+                                              is_little, !is_unsigned);
+                Py_DECREF(v);
+                if (likely(!ret))
+                    return val;
+            }
+#endif
+            return (int) -1;
+        }
+    } else {
+        int val;
+        PyObject *tmp = __Pyx_PyNumber_IntOrLong(x);
+        if (!tmp) return (int) -1;
+        val = __Pyx_PyInt_As_int(tmp);
+        Py_DECREF(tmp);
+        return val;
+    }
+raise_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "value too large to convert to int");
+    return (int) -1;
+raise_neg_overflow:
+    PyErr_SetString(PyExc_OverflowError,
+        "can't convert negative value to int");
+    return (int) -1;
 }
 
 /* FastTypeChecks */

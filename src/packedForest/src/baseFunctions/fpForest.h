@@ -14,61 +14,57 @@ namespace fp {
 			// protected:
 			// 	std::unique_ptr<fpForestBase<T> > forest;
 
-				// void loadData(){
-				// 	fpSingleton::getSingleton().loadData();
-				// }
+			// 	void loadData(){
+			// 		fpSingleton::getSingleton().loadData();
+			// 	}
 
-				// void loadTestData(){
-				// 	fpSingleton::getSingleton().loadTestData();
-				// }
+			// 	void loadTestData(){
+			// 		fpSingleton::getSingleton().loadTestData();
+			// 	}
 
-				// void deleteData(){
-				// 	fpSingleton::getSingleton().deleteData();
-				// }
+			// 	void deleteData(){
+			// 		fpSingleton::getSingleton().deleteData();
+			// 	}
 
-				// void deleteTestData(){
-				// 	fpSingleton::getSingleton().deleteTestData();
-				// }
+			// 	void deleteTestData(){
+			// 		fpSingleton::getSingleton().deleteTestData();
+			// 	}
 
 
-				// inline void setFunctionPointers(){
-				// 	;//fpSingleton::getSingleton().setFunctionPointers();
-				// }
+			// 	inline void setFunctionPointers(){
+			// 		;//fpSingleton::getSingleton().setFunctionPointers();
+			// 	}
 
-				// inline void initializeForestType(){
-				// 	forest = forestFactory<T>::setForestType(fpSingleton::getSingleton().returnForestType());
-				// }
+			// 	inline void initializeForestType(){
+			// 		forest = forestFactory<T>::setForestType(fpSingleton::getSingleton().returnForestType());
+			// 	}
 
-				// inline void setDataDependentParameters(){
-				// 	fpSingleton::getSingleton().setDataDependentParameters();
-				// }
+			// 	inline void setDataDependentParameters(){
+			// 		fpSingleton::getSingleton().setDataDependentParameters();
+			// 	}
 
 
 			public:
 
 				fpForest(){}
 
-				// // TODO: RM
-				// fpForest& operator=(const T& other) {
-				// 	return *this;
+				inline void setParamString(const std::string parameterName, const std::string parameterValue){
+					std::cout << parameterName << ": " << parameterValue << "\n";
+					fpSingleton::getSingleton().setParameter(parameterName, parameterValue);
+				}
+
+
+				// inline void setParamDouble(const std::string& parameterName, const double parameterValue){
+				// 	fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
 				// }
 
-				inline void setParamString(const std::string& parameterName, const std::string& parameterValue){
-					fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
-				}
+				// inline void setParamInt(const std::string& parameterName, const int parameterValue){
+				// 	fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
+				// }
 
-
-				inline void setParamDouble(const std::string& parameterName, const double parameterValue){
-					fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
-				}
-
-				inline void setParamInt(const std::string& parameterName, const int parameterValue){
-					fpSingleton::getSingleton().setParameter(parameterName, parameterValue);	
-				}
-
-				inline void printParameters(){
-					fpSingleton::getSingleton().printAllParameters();
-				}
+				// inline void printParameters(){
+				// 	fpSingleton::getSingleton().printAllParameters();
+				// }
 
 				// inline void printForestType(){
 				// 	fpSingleton::getSingleton().printForestType();
