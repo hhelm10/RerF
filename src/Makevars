@@ -9,6 +9,6 @@ PKG_CFLAGS = -IforestPacking -IpackedForest
 
 OBJECTS.forestPacking = forestPacking/treeStruct/padNode.o forestPacking/treeStruct/padForest.o forestPacking/treeStruct/inferenceSamples.o forestPacking/treeStruct/padNodeStat.o forestPacking/treeStruct/treeBin2.o split.o forestPacking.o forestPacking/improv8.o RcppExports.o 
 
-OBJECTS.fpack = packedForest/src/fpSingleton/fpInfo.o fp.o
+OBJECTS.fpack = fp.o
 
 OBJECTS = $(OBJECTS.forestPacking) $(OBJECTS.fpack)
