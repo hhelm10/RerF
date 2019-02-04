@@ -11,3 +11,12 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^src/submodule_readme.md$
+^src/packedForest/docs$
+^src/packedForest/experiments$
+^src/packedForest/test$
+^src/packedForest/res$
+^src/packedForest/quickTest.sh$
+^src/packedForest/testFP.sh$
+^src/packedForest/README.md$
+
