@@ -44,3 +44,14 @@ Note: problems running the compile command on `fish`.  Use `bash` for the time b
 ## Run the example
 
 [Example.py](example.py)
+
+## Tests
+
+We use pytest for Python testing
+
+Run the tests from command line:
+
+```sh
+cd Python
+python -m pytest
+```
