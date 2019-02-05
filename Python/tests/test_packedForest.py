@@ -22,6 +22,6 @@ def test_set_params():
     assert params["minParent"] == "2"
     assert params["columnWithY"] == "3"
     assert params["numCores"] == "4"
-    assert params["fractionOfFeaturesToTest"] == "0.250000"
+    assert float(params["fractionOfFeaturesToTest"]) == 0.25
     assert params["seed"] == "300"
     assert params["Type of Forest"] == "rerf"

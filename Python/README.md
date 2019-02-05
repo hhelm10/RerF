@@ -52,6 +52,5 @@ We use pytest for Python testing
 Run the tests from command line:
 
 ```sh
-cd Python
 python -m pytest
 ```

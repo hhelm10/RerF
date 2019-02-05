@@ -6,7 +6,7 @@ from RerF import fastPredict, fastRerF
 
 
 def test_fastRerF():
-    datafile = "../src/packedForest/res/iris.csv"
+    datafile = "src/packedForest/res/iris.csv"
     label_col = 4
     forest = fastRerF(
         datafile,
@@ -22,7 +22,7 @@ def test_fastRerF():
 
     params = get_params(forest)
 
-    assert params["CSV file name"] == "../src/packedForest/res/iris.csv"
+    assert params["CSV file name"] == "src/packedForest/res/iris.csv"
     assert params["numTreesInForest"] == "50"
     assert params["minParent"] == "1"
     assert params["columnWithY"] == "4"
@@ -30,5 +30,6 @@ def test_fastRerF():
     assert params["mtry"] == "2"
     assert params["seed"] == "30"
     assert params["Type of Forest"] == "rerf"
-
-    # X = np.genfromtxt(datafile, delimiter=",")
+    assert params["numClasses"] == "3"
+    assert params["numObservations"] == "150"
+    assert params["numFeatures"] == "4"
