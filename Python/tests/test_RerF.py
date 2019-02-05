@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from .helper import get_params
-from RerF import fastPredict, fastRerF
+from ..RerF import fastPredict, fastRerF
 
 
 def test_fastRerF():
