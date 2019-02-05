@@ -35,6 +35,7 @@ matrix:
       - "3.6"
     install: 
       - pip install -r Python/requirements.txt
+      - pip install Python/
     script:
       - pytest
 
