@@ -31,12 +31,13 @@ matrix:
       - R CMD check --as-cran --no-manual rerf*tar.gz
 
   - language: python
+    dist: xenial
     python: 
       - "3.6"
     before_install: cd Python
     install: 
       - pip install -r requirements.txt
-      - pip install .
+      - pip install -e .
       - cd ..
     script:
       - pytest
